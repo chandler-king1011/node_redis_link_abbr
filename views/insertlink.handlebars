@@ -4,9 +4,9 @@
             <a href="/links">View All Links</a>
         </div>
         <div class="body-wrapper">
-            <form method="POST" action="/">
+            <form method="POST" onSubmit= action="/">
                 <input type="text" name = "id" />
                 <input type="text" name = "url" />
                 <button type="submit">Shorten URL</button>
             </form>
-{{#if link}}<div class="new_url">{{link}}</div>{{/if}}
+{{#if link}}<div class="new_url"></div>Your shortened link is.. {{link}}</div>{{/if}}
