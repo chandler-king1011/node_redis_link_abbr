@@ -1,3 +1,58 @@
+<style>
+    body {
+        margin: 0;
+        background-color: #EFF3F9;
+    }
+    .home-wrapper > .heading-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #0066ffff;
+    }
+    .heading-wrapper h1 {
+        color: #00ff00ff;
+    }
+    .heading-wrapper a {
+        text-decoration: none;
+        color: #00ff00ff;
+        font-size: 1.25em;
+        transition: 0.2s ease-in-out;
+    }
+    .heading-wrapper a:hover {
+        color: #EFF3F9;
+    }
+    .body-wrapper {
+        margin-top: 150px;
+        display: flex;
+        justify-content: center;
+    }
+    form {
+        width: 90vw;
+        display: flex;
+        justify-content: space-around;
+    }
+    form input {
+        width: 500px;
+        height: 50px;
+        border: none;
+        transition: 0.2s ease-in-out;
+        background-color: #d5e5ffff;
+    }
+    form input:focus {
+        outline: none;
+        border-bottom: solid 1px #0066ffff;
+        box-shadow: -1px 9px 24px 0px rgba(0,34,85,0.64);
+    }
+
+    form > .button {
+        width: 400px;
+        display: flex;
+        justify-content: center;
+    }
+ 
+
+</style>
+
 <div class="home-wrapper">
         <div class = "heading-wrapper">
             <h1>Redis Link Shortener</h1>
@@ -5,8 +60,12 @@
         </div>
         <div class="body-wrapper">
             <form method="POST" onSubmit= action="/">
-                <input type="text" name = "id" />
-                <input type="text" name = "url" />
-                <button type="submit">Shorten URL</button>
+                <input type="text" name = "id" placeholder="ID" />
+                <input type="text" name = "url" placeholder="URL"/>
+                <div class= "button">
+                    <button type="submit">Shorten URL</button>
+                </div>
             </form>
-{{#if link}}<div class="new_url"></div>Your shortened link is.. {{link}}</div>{{/if}}
+        </div>
+{{#if link}}<div class="new_url"></div>Your shortened link is.. {{link}}{{/if}}
+</div>
