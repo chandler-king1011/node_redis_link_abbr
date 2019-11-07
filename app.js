@@ -43,18 +43,13 @@ app.get("/", function(req, res, next) {
 );
 
 
-function sendLinks(obj) {
-    for (key in obj) {
-       return(obj[key]);
-    }
-}
 
 
 
 app.get("/links", function(req, response, next) {
     client.hgetall("link", function(err, res) {
         linkObj = res;
-        response.render("links", {links: sendLinks(linkObj)})
+        response.render("links", linkObj);
      });
 });
     
