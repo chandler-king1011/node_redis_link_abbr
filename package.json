@@ -1,0 +1,18 @@
+{
+  "name": "node_redis_link_abbr",
+  "version": "1.0.0",
+  "description": "Simple Node/Redis app that abbr. given urls",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "Chandler King <ckmotox356@gmail.com> (https://www.npmjs.com/~chandler_king1011)",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "redis": "^2.8.0"
+  }
+}
