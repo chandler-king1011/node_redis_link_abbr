@@ -1,4 +1,49 @@
-<h1>LINKS</h1>
+<style>
+    body {
+        color: #EFF3F9;
+    }
+    .heading-wrapper {
+        height: 100%;
+        background-color: #0066ffff;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .heading-wrapper h1 {
+        color: #00ff00ff;
+    }
+     .heading-wrapper a {
+        text-decoration: none;
+        color: #00ff00ff;
+        font-size: 1.25em;
+        transition: 0.2s ease-in-out;
+    }
+    .heading-wrapper a:hover {
+        color: #EFF3F9;
+    }
+
+    .link-wrapper {
+        margin-top: 50px;
+        background-color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .link-wrapper a {
+        text-decoration: none;
+        color:  #0066ffff;
+        font-size: 1.25em;
+        transition: 0.2s ease-in-out;
+    }
+    .link-wrapper a:hover {
+        color: #002255ff;
+    }
+</style>
+
+<div class="heading-wrapper">
+    <h1>Links</h1>
+    <a href="/">Home</a>
+</div>
 <div class = "link-wrapper"> 
 {{#if 1}} <a href={{1}}>{{short1}}</a> {{/if}}
 {{#if 2}} <a href={{2}}>{{short2}}</a> {{/if}}
@@ -21,7 +66,6 @@
 {{#if 19}} <a href={{19}}>{{short19}}</a> {{/if}}
 {{#if 20}} <a href={{20}}>{{short20}}</a> {{/if}}
 </div>
-
 
 
 

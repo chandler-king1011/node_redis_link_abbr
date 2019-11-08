@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const redis = require('redis');
 const exphbs = require("express-handlebars");
+
+//Setting up server
 const port = 3000;
 const app = express();
 
@@ -29,7 +31,7 @@ client.on("error", function (err) {
 
 
 
-
+//Home views
 app.get("/", function(req, res, next) {
     res.render("insertlink");
     }
@@ -41,36 +43,24 @@ app.post("/", function(req, res) {
     let fieldOne = req.body.id
     let fieldTwo = "short" + req.body.id;
     let shortenLink = `http://localhost:${Math.random()}`;
-    console.log(shortenLink);
     client.hmset(key, fieldOne, url, fieldTwo, shortenLink);
-    client.hgetall(key, fieldTwo, function(err, response) {
-        let url = response;
-        console.log(response);
-        res.render("insertlink", {
-            link: url
-        });
+    res.render("insertlink", {link: shortenLink});
     });
-});
 
 
 
 
+//Links views
 app.get("/links", function(req, response, next) {
     client.hgetall("link", function(err, res) {
         linkObj = res;
-        console.log(linkObj);
         response.render("links", linkObj);
      });
 });
     
 
 
-
-
-
-
-
-
+//Port listener
 app.listen(port, function() {
     console.log('Server started on port:' + port);
 });
